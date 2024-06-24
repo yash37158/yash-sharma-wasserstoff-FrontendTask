@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  
+  /* List maker */
+  .list-maker {
+    padding: 20px;
+  }
+  
+  .new-item {
+    margin-bottom: 20px;
+  }
+  
+  .list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .list-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .list-item input[type='checkbox'] {
+    margin-right: 10px;
+  }
+  
+  .list-item .line-through {
+    text-decoration: line-through;
+  }
+  
+  .list-item button {
+    margin-left: auto;
+    padding: 5px 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Readme Preview */
+
+  .readme-preview {
+    padding: 20px;
+  }
+  
+  .markdown-content {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #ffffff;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  
+  .text-gray-500 {
+    color: #6b7280;
+  }
+
+  .note-maker .categories {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .category {
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .note-item {
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  
