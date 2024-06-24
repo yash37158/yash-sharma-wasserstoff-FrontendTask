@@ -129,15 +129,21 @@ const Category = ({ status, onDrop, children }: any) => {
     drop: (item: Note) => onDrop(item, status),
   });
 
+  const categoryRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    drop(categoryRef.current);
+  }, [drop]);
+
   return (
-    <div ref={drop} className="category flex-1 p-4 bg-gray-200 rounded-md">
+    <div ref={categoryRef} className="category flex-1 p-4 bg-gray-200 rounded-md">
       {children}
     </div>
   );
 };
 
 const NoteItem = ({ note, onDrop }: { note: Note, onDrop: (item: Note, status: Note['status']) => void }) => {
-  const [{ isDragging }, drag] = useDrag({
+  const [{ isDragging }] = useDrag({
     type: 'NOTE',
     item: note,
     collect: (monitor) => ({
@@ -147,7 +153,6 @@ const NoteItem = ({ note, onDrop }: { note: Note, onDrop: (item: Note, status: N
 
   return (
     <motion.div
-      ref={drag}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

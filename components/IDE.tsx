@@ -13,7 +13,7 @@ const IDE = () => {
     if (!selectedFile) return null;
     switch (selectedFile.extension) {
       case 'ed':
-        return <TextEditor />;
+        return <TextEditor fileName={''} />;
       case 'note':
         return <NoteMaker />;
       case 'lt':
